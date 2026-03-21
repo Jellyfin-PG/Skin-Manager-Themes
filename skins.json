@@ -31,8 +31,73 @@
             "https://raw.githubusercontent.com/lscambo13/ElegantFin/main/screenshots/ElegantFin-Preview.png"
         ],
         "sourceUrl": "https://github.com/lscambo13/ElegantFin",
-        "cssUrl": "https://cdn.jsdelivr.net/gh/lscambo13/ElegantFin@main/Theme/ElegantFin-jellyfin-theme-build-latest-minified.css",
-        "cssImport": "@import url(\"https://cdn.jsdelivr.net/gh/lscambo13/ElegantFin@main/Theme/ElegantFin-jellyfin-theme-build-latest-minified.css\");"
+        "cssUrl": "https://raw.githubusercontent.com/Jellyfin-PG/Skin-Manager-Themes/refs/heads/main/temp/elegantfin.min.css",
+        "cssImport": "@import url(\"https://raw.githubusercontent.com/Jellyfin-PG/Skin-Manager-Themes/refs/heads/main/temp/elegantfin.min.css\");",
+        "vars": [
+            {
+                "key": "ACCENT_COLOR",
+                "name": "Accent Color",
+                "description": "Primary accent color used for active states, selected items, and UI highlights. Default is purple.",
+                "type": "color",
+                "default": "#775bf4"
+            },
+            {
+                "key": "ACCENT_COLOR_ALPHA",
+                "name": "Accent Color (with opacity)",
+                "description": "Same color as Accent Color but at ~90% opacity. Update this to match your accent color, e.g. rgba(119,91,244,0.9).",
+                "type": "text",
+                "default": "rgba(119, 91, 244, 0.9)"
+            },
+            {
+                "key": "APP_BAR_HEIGHT",
+                "name": "App Bar Style",
+                "description": "5em = faded transparent bar (default). 4.6em = solid bar with a visible border.",
+                "type": "text",
+                "default": "5em"
+            },
+            {
+                "key": "BACKDROP_TRIM",
+                "name": "Backdrop Trim",
+                "description": "How much to crop from the top of backdrop images. Between 0% and 20%. Default is 10%.",
+                "type": "text",
+                "default": "10%"
+            },
+            {
+                "key": "CARD_HOVER_EFFECT",
+                "name": "Card Hover Shimmer",
+                "description": "Shimmer animation when hovering over cards. Use empty string to enable (default), or none to disable.",
+                "type": "text",
+                "default": ""
+            },
+            {
+                "key": "CLEAR_LOGO_VISIBILITY",
+                "name": "Clear Logo",
+                "description": "Show the movie or show clear logo on detail pages. Use block to show (default), none to hide.",
+                "type": "text",
+                "default": "block"
+            },
+            {
+                "key": "LIBRARY_LABEL_VISIBILITY",
+                "name": "Library Labels",
+                "description": "Show text labels on media library tiles on the home screen. Use block to show, none to hide (default).",
+                "type": "text",
+                "default": "none"
+            },
+            {
+                "key": "ITEM_TITLE_VISIBILITY",
+                "name": "Item Title",
+                "description": "Show the media title when a clear logo is available. Use none to hide (default), block to always show.",
+                "type": "text",
+                "default": "none"
+            },
+            {
+                "key": "OVERLAY_PLAY_POSITION",
+                "name": "Play Button Position",
+                "description": "Position of the overlay play button on cards. 2.8em = bottom-left corner (default), 50% = center.",
+                "type": "text",
+                "default": "2.8em"
+            }
+        ]
     },
     {
         "name": "Ultrachromic (Monochromic Preset)",
