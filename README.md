@@ -1,4 +1,4 @@
-# Skin Manager — Theme Repository
+# Skin Manager: Theme Repository
 
 This repository hosts the community theme list for the [Skin Manager](https://github.com/Jellyfin-PG/Skin-Manager) Jellyfin plugin. The `skins.json` file is fetched live by the plugin, so approved themes appear in the store without requiring a plugin update.
 
