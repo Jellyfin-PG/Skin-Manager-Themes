@@ -17,7 +17,7 @@
     "version": "25.12.31",
     "jellyfin": "10.10+",
     "tags": ["dark", "modern", "mobile-friendly", "tv"],
-    "previewUrl": "https://raw.githubusercontent.com/lscambo13/ElegantFin/refs/heads/main/Previews/previews-v25.08.02/raw/desktop/1.%20Homepage.png",
+    "previewUrl": "https://i.imgur.com/drRNLnf.jpeg",
     "sourceUrl": "https://github.com/lscambo13/ElegantFin",
     "cssUrl": "https://raw.githubusercontent.com/Jellyfin-PG/Skin-Manager-Themes/refs/heads/main/temp/elegantfin.min.css",
     "vars": [
@@ -93,7 +93,7 @@
     "version": "latest",
     "jellyfin": "10.11+",
     "tags": ["dark", "modern", "glassmorphism", "mobile-friendly"],
-    "previewUrl": "https://raw.githubusercontent.com/KBH-Reeper/GlassFin/refs/heads/main/Visuals/Desktop/Homescreen.png",
+    "previewUrl": "https://i.imgur.com/t04RrBr.jpeg",
     "sourceUrl": "https://github.com/KBH-Reeper/GlassFin",
     "cssUrl": "https://cdn.jsdelivr.net/gh/KBH-Reeper/GlassFin@latest/Theme/GlassFin-Theme-latest-stable.css"
   },
@@ -115,7 +115,7 @@
     "version": "latest",
     "jellyfin": "10.10+",
     "tags": ["dark", "minimal", "modular", "backdrops"],
-    "previewUrl": "https://user-images.githubusercontent.com/4365015/127774204-03957527-7178-4ea2-8674-d83fe6a97d1c.png",
+    "previewUrl": "https://i.imgur.com/12GBS1L.png",
     "sourceUrl": "https://github.com/CTalvio/Ultrachromic",
     "cssUrl": "https://cdn.jsdelivr.net/gh/CTalvio/Ultrachromic/presets/monochromic_preset.css"
   },
@@ -137,7 +137,7 @@
     "version": "latest",
     "jellyfin": "10.10+",
     "tags": ["dark", "modern", "backdrops", "indicators"],
-    "previewUrl": "https://raw.githubusercontent.com/n00bcodr/Jellyfish/refs/heads/main/screenshots/home.png",
+    "previewUrl": "https://i.imgur.com/3oN25zZ.jpeg",
     "sourceUrl": "https://github.com/n00bcodr/Jellyfish",
     "cssUrl": "https://cdn.jsdelivr.net/gh/n00bcodr/jellyfish@main/theme.css"
   },
@@ -148,7 +148,7 @@
     "version": "latest",
     "jellyfin": "10.11+",
     "tags": ["dark", "minimal", "elegant", "backdrops"],
-    "previewUrl": "https://raw.githubusercontent.com/stpnwf/ZestyTheme/refs/heads/main/images/home.jpg",
+    "previewUrl": "https://i.imgur.com/9HUmwm9.jpeg",
     "sourceUrl": "https://github.com/stpnwf/ZestyTheme",
     "cssUrl": "https://cdn.jsdelivr.net/gh/stpnwf/ZestyTheme@latest/theme.css"
   },
@@ -159,7 +159,7 @@
     "version": "latest",
     "jellyfin": "10.11+",
     "tags": ["dark", "minimal", "color-variants"],
-    "previewUrl": "https://raw.githubusercontent.com/loof2736/scyfin/refs/heads/main/images/homepage.png",
+    "previewUrl": "https://i.imgur.com/aPdZCYi.png",
     "sourceUrl": "https://github.com/loof2736/scyfin",
     "cssUrl": "https://cdn.jsdelivr.net/gh/loof2736/scyfin@latest/CSS/scyfin-theme.css"
   },
@@ -170,7 +170,7 @@
     "version": "latest",
     "jellyfin": "10.10+",
     "tags": ["dark", "glassmorphism", "modern"],
-    "previewUrl": "https://raw.githubusercontent.com/alexyle/jellyfin-theme/main/assets/293199066-a7b851a6-303f-8412-a7bc-6362a92e0d0a.png",
+    "previewUrl": "https://i.imgur.com/wJ7wwXd.png",
     "sourceUrl": "https://github.com/alexyle/jellyfin-theme",
     "cssUrl": "https://cdn.jsdelivr.net/gh/alexyle/jellyfin-theme@main/glassmorphism/theme.css"
   },
@@ -192,7 +192,7 @@
     "version": "latest",
     "jellyfin": "10.10+",
     "tags": ["dark", "dracula", "purple", "developer"],
-    "previewUrl": "https://raw.githubusercontent.com/derektata/jellyfin-themes/refs/heads/main/examples/dracula.png",
+    "previewUrl": "https://i.imgur.com/KqxS1J7.png",
     "sourceUrl": "https://github.com/derektata/jellyfin-themes",
     "cssUrl": "https://derektata.github.io/jellyfin-themes/dracula.css"
   },
@@ -203,7 +203,7 @@
     "version": "latest",
     "jellyfin": "10.10+",
     "tags": ["dark", "one-dark", "blue", "developer"],
-    "previewUrl": "https://raw.githubusercontent.com/derektata/jellyfin-themes/refs/heads/main/examples/one-dark.png",
+    "previewUrl": "https://i.imgur.com/f69BXHw.png",
     "sourceUrl": "https://github.com/derektata/jellyfin-themes",
     "cssUrl": "https://derektata.github.io/jellyfin-themes/one-dark.css"
   },
@@ -214,7 +214,7 @@
     "version": "latest",
     "jellyfin": "10.10+",
     "tags": ["dark", "gruvbox", "warm", "developer"],
-    "previewUrl": "https://raw.githubusercontent.com/derektata/jellyfin-themes/refs/heads/main/examples/gruv-dark.png",
+    "previewUrl": "https://i.imgur.com/r1bj00n.png",
     "sourceUrl": "https://github.com/derektata/jellyfin-themes",
     "cssUrl": "https://derektata.github.io/jellyfin-themes/gruvbox-dark.css"
   },
@@ -225,7 +225,7 @@
     "version": "latest",
     "jellyfin": "10.10+",
     "tags": ["dark", "tokyo-night", "blue", "neon"],
-    "previewUrl": "https://raw.githubusercontent.com/derektata/jellyfin-themes/refs/heads/main/examples/tokyo.png",
+    "previewUrl": "https://i.imgur.com/e1urdcy.png",
     "sourceUrl": "https://github.com/derektata/jellyfin-themes",
     "cssUrl": "https://derektata.github.io/jellyfin-themes/tokyo.css"
   }
