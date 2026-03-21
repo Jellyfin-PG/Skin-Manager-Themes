@@ -10,12 +10,13 @@ Themes are added through GitHub issues. Open a new issue and select the **Theme 
 
 **Before submitting, make sure your theme meets these requirements:**
 
-- The CSS is hosted at a stable, publicly accessible URL (jsDelivr CDN or GitHub raw are preferred)
-- The theme works with a single `@import` or stylesheet link — no additional files required
+- The CSS is hosted at a stable, publicly accessible URL (jsDelivr CDN is strongly preferred)
 - It has been tested on Jellyfin 10.10 or 10.11
 - The source is publicly available (GitHub repository or equivalent)
 
-Themes that are abandoned, broken, or require files beyond a single CSS import will not be accepted.
+Themes that are abandoned, broken, or inaccessible will not be accepted.
+
+> **Note on hosting:** jsDelivr (`cdn.jsdelivr.net`) is the recommended host. It serves CSS with correct MIME types and is globally cached. Raw GitHub URLs (`raw.githubusercontent.com`) and gist URLs also work but are slower and may have availability issues.
 
 ---
 
@@ -39,23 +40,28 @@ Each entry in `skins.json` uses the following structure:
 
 **Available tags:** `dark` `light` `minimal` `modern` `colorful` `backdrops` `mobile-friendly` `tv` `icons` `animations` `developer`
 
+### Version field
+
+The `version` field is required. Skin Manager uses it to detect updates and manage the browser cache. When you ship a new version of your CSS, bump the version in `skins.json` and the plugin will automatically fetch the updated stylesheet and refresh it for all users without them needing to do anything.
+
+Use any consistent versioning scheme, semantic (`1.2.0`), date-based (`25.12.31`), or a channel label (`latest`). If you use `latest` the auto-update check is skipped since there is no version to compare against.
+
 ---
 
 ## Theme Variables
 
-Themes can expose configurable values that users can change from the Skin Manager settings page without editing any CSS. When a theme has variables, a configure button appears next to the Select button in the store.
+Themes can expose configurable values that users can change from the Skin Manager settings page without editing any CSS. When a theme has variables, a configure button appears on the selected theme card in the store.
 
-Variables are declared in `skins.json` using a `vars` array on the theme entry. The theme CSS file references them using standard CSS custom properties (`var(--key-name)`). Skin Manager injects a `:root` block with the user's saved values before the theme stylesheet is loaded.
+Variables are declared in `skins.json` using a `vars` array. The theme CSS references them using standard CSS custom properties (`var(--key-name)`). Skin Manager injects the user's saved values as a `:root` block directly into the page HTML before the stylesheet loads, so they apply instantly with no flash of unstyled content.
 
-### How to add variables to a theme
-
-**1. Declare vars in `skins.json`**
+### Declaring variables in `skins.json`
 
 Add a `vars` array to the theme entry. Each var needs a `key`, `name`, `description`, `type`, and `default`:
 
 ```json
 {
   "name": "My Theme",
+  "version": "1.0.0",
   "cssUrl": "https://cdn.jsdelivr.net/gh/author/theme@main/theme.css",
   "vars": [
     {
@@ -68,16 +74,16 @@ Add a `vars` array to the theme entry. Each var needs a `key`, `name`, `descript
     {
       "key": "FONT_SIZE",
       "name": "Base Font Size",
-      "description": "Base font size in pixels.",
-      "type": "number",
-      "default": "14"
+      "description": "Base font size. Use CSS units e.g. 14px, 1em.",
+      "type": "text",
+      "default": "14px"
     },
     {
-      "key": "SHOW_BACKDROPS",
+      "key": "ENABLE_BACKDROPS",
       "name": "Show Backdrops",
       "description": "Toggle backdrop images on the home screen.",
       "type": "boolean",
-      "default": "true"
+      "default": "false"
     }
   ]
 }
@@ -85,53 +91,131 @@ Add a `vars` array to the theme entry. Each var needs a `key`, `name`, `descript
 
 **Available var types:** `text` `color` `number` `boolean`
 
-The `key` field uses `UPPER_SNAKE_CASE`. Skin Manager converts it to `--lower-kebab-case` automatically when injecting — so `ACCENT_COLOR` becomes `--accent-color`, `FONT_SIZE` becomes `--font-size`, and so on.
+The `key` uses `UPPER_SNAKE_CASE`. Skin Manager converts it to `--lower-kebab-case` automatically — `ACCENT_COLOR` becomes `--accent-color`, `FONT_SIZE` becomes `--font-size`, and so on.
 
-**2. Use `var()` in your CSS file**
+### Using variables in your CSS
 
-Reference the custom properties in your CSS. Do not declare `:root` defaults in the CSS file — all defaults live in `mods.json` via the `default` field. Skin Manager's injected `:root` block is the only source of truth.
+Reference the custom properties using `var()`. Always include a fallback value — this is what users on older plugin versions will see, and it ensures your theme looks correct even if no value has been saved yet:
 
 ```css
-/* theme.css */
-
-:root {
-  /* Do not put defaults here — declare them in skins.json instead */
-}
-
 .headerTop {
-  background-color: var(--accent-color);
+  background-color: var(--accent-color, #00a4dc);
 }
 
-.cardText {
-  font-size: var(--font-size, 14px); /* fallback is optional but harmless */
+body {
+  font-size: var(--font-size, 14px);
 }
 ```
 
-**3. How it gets injected**
+### How injection works
 
-When a user saves their variable values, Skin Manager injects this into `index.html` before the theme stylesheet:
+When a user saves their variable values, Skin Manager injects a `<style>` tag directly into `index.html` before the page is served:
 
 ```html
 <style id="skinmanager-vars">
 :root {
     --accent-color: #e5534b;
-    --font-size: 16;
-    --show-backdrops: false;
+    --font-size: 16px;
 }
-</style>
-<style id="skinmanager-theme">
-@import url("https://cdn.jsdelivr.net/.../theme.css");
 </style>
 ```
 
-The `:root` block is in a separate `<style>` tag before the `@import` — this is required because `@import` must be the first rule in any stylesheet.
+This tag is applied immediately as the browser parses the HTML, before any JavaScript runs or any network request is made for the stylesheet.
+
+---
+
+## Addon CSS Sheets
+
+Themes can include optional addon stylesheets that users enable or disable using boolean variables. This lets you ship modular features — media player reskins, third-party plugin support, alternate layouts, without loading CSS that the user does not want.
+
+### How it works
+
+Add a special comment to your theme CSS file for each addon:
+
+```css
+/* @sm-import-if VAR_KEY https://cdn.jsdelivr.net/gh/author/theme@main/addons/media-bar.css */
+```
+
+When Skin Manager loads your theme, it reads these comments. If `VAR_KEY` is `true` in the user's saved vars, the addon URL is fetched and appended to the theme CSS. If it is `false` or unset, the comment is stripped and nothing is loaded.
+
+Declare the corresponding var as a `boolean` type in `skins.json`:
+
+```json
+{
+  "key": "MEDIA_BAR_SUPPORT",
+  "name": "Media Bar Plugin Support",
+  "description": "Enable additional styles for the Media Bar plugin.",
+  "type": "boolean",
+  "default": "false"
+}
+```
+
+### Full example
+
+`skins.json` entry:
+
+```json
+{
+  "name": "My Theme",
+  "version": "1.2.0",
+  "cssUrl": "https://cdn.jsdelivr.net/gh/author/theme@main/theme.css",
+  "vars": [
+    {
+      "key": "ACCENT_COLOR",
+      "name": "Accent Color",
+      "description": "Primary highlight color.",
+      "type": "color",
+      "default": "#00a4dc"
+    },
+    {
+      "key": "MEDIA_BAR_SUPPORT",
+      "name": "Media Bar Plugin Support",
+      "description": "Enable additional styles for the Media Bar plugin.",
+      "type": "boolean",
+      "default": "false"
+    },
+    {
+      "key": "CUSTOM_COVERS",
+      "name": "Custom Media Covers",
+      "description": "Enable alternate card cover styles.",
+      "type": "boolean",
+      "default": "false"
+    }
+  ]
+}
+```
+
+`theme.css`:
+
+```css
+/* @sm-import-if MEDIA_BAR_SUPPORT https://cdn.jsdelivr.net/gh/author/theme@main/addons/media-bar.css */
+/* @sm-import-if CUSTOM_COVERS https://cdn.jsdelivr.net/gh/author/theme@main/addons/custom-covers.css */
+
+.headerTop {
+  background-color: var(--accent-color, #00a4dc);
+}
+```
+
+Addon sheets can be hosted anywhere, jsDelivr is recommended for the same reasons as the main CSS.
 
 ### Backward compatibility
 
-Variables are fully optional. Themes without a `vars` array work exactly as before — no configure button appears, nothing changes for existing users. Adding vars to an existing theme is non-breaking.
+`@sm-import-if` comments are valid CSS comments and are silently ignored by any browser or plugin that does not understand them. Older versions of Skin Manager will simply load the theme without the addons.
+
+---
+
+## Backward Compatibility
+
+All features are additive and optional:
+
+- Themes without `vars` work exactly as before, no configure button appears
+- Themes without `@sm-import-if` comments are unaffected by the addon system
+- The `version` field is new but harmless to omit, auto-update is simply skipped for themes without it
+- CSS `var(--key, fallback)` syntax means themes with variables still display correctly on older plugin versions using the fallback value
 
 ---
 
 ## License
 
 The contents of this repository are licensed under [MIT](LICENSE). Individual themes remain the property of their respective authors under their own licenses.
+
