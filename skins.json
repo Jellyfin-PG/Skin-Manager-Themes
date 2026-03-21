@@ -26,9 +26,8 @@
             "mobile-friendly",
             "tv"
         ],
-        "previewUrl": "https://raw.githubusercontent.com/lscambo13/ElegantFin/main/Theme/assets/img/banner.png",
+        "previewUrl": "https://raw.githubusercontent.com/lscambo13/ElegantFin/refs/heads/main/Previews/previews-v25.08.02/raw/desktop/1.%20Homepage.png",
         "screenshots": [
-            "https://raw.githubusercontent.com/lscambo13/ElegantFin/main/screenshots/ElegantFin-Preview.png"
         ],
         "sourceUrl": "https://github.com/lscambo13/ElegantFin",
         "cssUrl": "https://raw.githubusercontent.com/Jellyfin-PG/Skin-Manager-Themes/refs/heads/main/temp/elegantfin.min.css",
@@ -111,30 +110,12 @@
             "modular",
             "backdrops"
         ],
-        "previewUrl": "https://raw.githubusercontent.com/CTalvio/Ultrachromic/main/assets/background.png",
+        "previewUrl": "https://user-images.githubusercontent.com/4365015/127774204-03957527-7178-4ea2-8674-d83fe6a97d1c.png",
         "screenshots": [
-            "https://raw.githubusercontent.com/CTalvio/Ultrachromic/main/assets/background.png"
         ],
         "sourceUrl": "https://github.com/CTalvio/Ultrachromic",
         "cssUrl": "https://cdn.jsdelivr.net/gh/CTalvio/Ultrachromic/presets/monochromic_preset.css",
         "cssImport": "@import url('https://cdn.jsdelivr.net/gh/CTalvio/Ultrachromic/presets/monochromic_preset.css');"
-    },
-    {
-        "name": "Ultrachromic (Novachromic Preset)",
-        "author": "CTalvio",
-        "description": "A vibrant and colorful take on Ultrachromic. The Novachromic preset adds rich color accents and glowing effects on top of the Ultrachromic foundation.",
-        "version": "latest",
-        "jellyfin": "10.10+",
-        "tags": [
-            "dark",
-            "colorful",
-            "backdrops"
-        ],
-        "previewUrl": "https://raw.githubusercontent.com/CTalvio/Ultrachromic/main/assets/background.png",
-        "screenshots": [],
-        "sourceUrl": "https://github.com/CTalvio/Ultrachromic",
-        "cssUrl": "https://cdn.jsdelivr.net/gh/CTalvio/Ultrachromic/presets/novachromic_preset.css",
-        "cssImport": "@import url('https://cdn.jsdelivr.net/gh/CTalvio/Ultrachromic/presets/novachromic_preset.css');"
     },
     {
         "name": "JellySkin",
@@ -167,7 +148,7 @@
             "elegant",
             "backdrops"
         ],
-        "previewUrl": "",
+        "previewUrl": "https://raw.githubusercontent.com/stpnwf/ZestyTheme/refs/heads/main/images/home.jpg",
         "screenshots": [],
         "sourceUrl": "https://github.com/stpnwf/ZestyTheme",
         "cssUrl": "https://cdn.jsdelivr.net/gh/stpnwf/ZestyTheme@latest/theme.css",
@@ -184,7 +165,7 @@
             "minimal",
             "color-variants"
         ],
-        "previewUrl": "",
+        "previewUrl": "https://raw.githubusercontent.com/loof2736/scyfin/refs/heads/main/images/homepage.png",
         "screenshots": [],
         "sourceUrl": "https://github.com/loof2736/scyfin",
         "cssUrl": "https://cdn.jsdelivr.net/gh/loof2736/scyfin@latest/CSS/scyfin-theme.css",
@@ -201,11 +182,11 @@
             "clean",
             "light"
         ],
-        "previewUrl": "",
+        "previewUrl": "https://private-user-images.githubusercontent.com/66086488/549468896-d6c2cf92-a68c-48fa-9613-f64c573d5794.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NzQxMzAyNTMsIm5iZiI6MTc3NDEyOTk1MywicGF0aCI6Ii82NjA4NjQ4OC81NDk0Njg4OTYtZDZjMmNmOTItYTY4Yy00OGZhLTk2MTMtZjY0YzU3M2Q1Nzk0LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjAzMjElMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwMzIxVDIxNTIzM1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWJhNmVhN2YzZDRlZmY2MGU3ZDBhNmIxMTViMGJhM2VmZTFhMzA2MTFmYjgzMmUwN2Y4MGFmZTU1N2ZjN2FlMmImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.EM6JB-FVFHaOUEnFxmAdQEb2vlIlTW0ElQ5xNPrTvUw",
         "screenshots": [],
         "sourceUrl": "https://github.com/tedhinklater/finimalism",
-        "cssUrl": "https://cdn.jsdelivr.net/gh/tedhinklater/finimalism@main/Finimalism11.css",
-        "cssImport": "@import url(\"https://cdn.jsdelivr.net/gh/tedhinklater/finimalism@main/Finimalism11.css\");"
+        "cssUrl": "https://cdn.jsdelivr.net/gh/tedhinklater/finimalism@main/Finimalism12.css",
+        "cssImport": "@import url(\"https://cdn.jsdelivr.net/gh/tedhinklater/finimalism@main/Finimalism12.css\");"
     },
     {
         "name": "Dracula",
@@ -219,7 +200,7 @@
             "purple",
             "developer"
         ],
-        "previewUrl": "",
+        "previewUrl": "https://raw.githubusercontent.com/derektata/jellyfin-themes/refs/heads/main/examples/dracula.png",
         "screenshots": [],
         "sourceUrl": "https://github.com/derektata/jellyfin-themes",
         "cssUrl": "https://derektata.github.io/jellyfin-themes/dracula.css",
@@ -237,7 +218,7 @@
             "blue",
             "developer"
         ],
-        "previewUrl": "",
+        "previewUrl": "https://raw.githubusercontent.com/derektata/jellyfin-themes/refs/heads/main/examples/one-dark.png",
         "screenshots": [],
         "sourceUrl": "https://github.com/derektata/jellyfin-themes",
         "cssUrl": "https://derektata.github.io/jellyfin-themes/one-dark.css",
