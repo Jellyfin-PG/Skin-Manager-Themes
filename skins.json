@@ -231,7 +231,7 @@
     "tags": ["minimal", "clean", "light"],
     "previewUrl": "https://i.imgur.com/OLLSX1K.jpeg",
     "sourceUrl": "https://github.com/tedhinklater/finimalism",
-    "cssUrl": "https://raw.githubusercontent.com/Jellyfin-PG/Skin-Manager-Themes/refs/heads/main/temp/finimalism11.min.css"
+    "cssUrl": "https://cdn.jsdelivr.net/gh/tedhinklater/finimalism@main/Finimalism11.css"
   },
   {
     "name": "Finimalism 12",
