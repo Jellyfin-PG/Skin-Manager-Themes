@@ -24,16 +24,32 @@
       {
         "key": "ACCENT_COLOR",
         "name": "Accent Color",
-        "description": "Primary accent color used for active states, selected items, and UI highlights. Default is purple.",
+        "description": "Primary accent color for backgrounds, buttons, and highlights. Supports gradients.",
         "type": "color",
         "default": "#775bf4"
       },
       {
+        "key": "ACCENT_COLOR_SOLID",
+        "name": "Accent Color (solid)",
+        "description": "Solid version of the accent color used for text, borders, and contexts where gradients are not valid. Should match or complement the main Accent Color.",
+        "type": "color",
+        "default": "#775bf4",
+        "allowGradient": false
+      },
+      {
         "key": "ACCENT_COLOR_ALPHA",
         "name": "Accent Color (with opacity)",
-        "description": "Same color as Accent Color but at ~90% opacity. Update this to match your accent color.",
+        "description": "Accent color at ~90% opacity, used for selection highlights and overlays. Supports gradients.",
         "type": "color",
         "default": "rgba(119, 91, 244, 0.9)"
+      },
+      {
+        "key": "ACCENT_COLOR_SOLID_ALPHA",
+        "name": "Accent Color (solid, with opacity)",
+        "description": "Solid semi-transparent version used for color contexts. Should be rgba() matching the solid accent color.",
+        "type": "color",
+        "default": "rgba(119, 91, 244, 0.9)",
+        "allowGradient": false
       },
       {
         "key": "APP_BAR_HEIGHT",
@@ -45,37 +61,45 @@
       {
         "key": "BACKDROP_TRIM",
         "name": "Backdrop Trim",
-        "description": "How much to crop from the top of backdrop images. Between 0% and 20%. Default is 10%.",
+        "description": "How much to crop from the top of backdrop images. Between 0% and 20%.",
         "type": "text",
         "default": "10%"
       },
       {
         "key": "CARD_HOVER_EFFECT",
         "name": "Card Hover Shimmer",
-        "description": "Shimmer animation when hovering over cards. Use empty string to enable (default), or none to disable.",
-        "type": "text",
-        "default": ""
+        "description": "Enable the shimmer animation when hovering over cards.",
+        "type": "boolean",
+        "default": "true",
+        "trueValue": "",
+        "falseValue": "none"
       },
       {
         "key": "CLEAR_LOGO_VISIBILITY",
         "name": "Clear Logo",
-        "description": "Show the movie or show clear logo on detail pages. Use block to show (default), none to hide.",
-        "type": "text",
-        "default": "block"
+        "description": "Show the movie or show clear logo on detail pages.",
+        "type": "boolean",
+        "default": "true",
+        "trueValue": "block",
+        "falseValue": "none"
       },
       {
         "key": "LIBRARY_LABEL_VISIBILITY",
         "name": "Library Labels",
-        "description": "Show text labels on media library tiles on the home screen. Use block to show, none to hide (default).",
-        "type": "text",
-        "default": "none"
+        "description": "Show text labels on media library tiles on the home screen.",
+        "type": "boolean",
+        "default": "false",
+        "trueValue": "block",
+        "falseValue": "none"
       },
       {
         "key": "ITEM_TITLE_VISIBILITY",
         "name": "Item Title",
-        "description": "Show the media title when a clear logo is available. Use none to hide (default), block to always show.",
-        "type": "text",
-        "default": "none"
+        "description": "Show the media title when a clear logo is available.",
+        "type": "boolean",
+        "default": "false",
+        "trueValue": "block",
+        "falseValue": "none"
       },
       {
         "key": "OVERLAY_PLAY_POSITION",
