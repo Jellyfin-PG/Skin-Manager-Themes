@@ -26,7 +26,7 @@
         "name": "Accent Color",
         "description": "Primary accent color for backgrounds, buttons, and highlights. Supports gradients.",
         "type": "color",
-        "default": "#775bf4"
+        "default": "#775bf4",
       },
       {
         "key": "ACCENT_COLOR_SOLID",
@@ -49,6 +49,22 @@
         "description": "Solid semi-transparent version used for color contexts. Should be rgba() matching the solid accent color.",
         "type": "color",
         "default": "rgba(119, 91, 244, 0.9)",
+        "allowGradient": false
+      },
+      {
+        "key": "DARKER_GRADIENT_POINT",
+        "name": "Background Gradient Dark Color",
+        "description": "The darker color used in page background gradients. Supports gradients for multi-tone backgrounds.",
+        "type": "color",
+        "default": "#111827",
+        "allowGradient": false
+      },
+      {
+        "key": "DARKER_BORDER_COLOR",
+        "name": "Border Color",
+        "description": "Color used for card borders and dividers throughout the theme.",
+        "type": "color",
+        "default": "hsl(214, 13%, 22%)",
         "allowGradient": false
       },
       {
