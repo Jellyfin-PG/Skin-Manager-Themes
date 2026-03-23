@@ -19,7 +19,7 @@
     "tags": ["dark", "modern", "mobile-friendly", "tv"],
     "previewUrl": "https://i.imgur.com/drRNLnf.jpeg",
     "sourceUrl": "https://github.com/lscambo13/ElegantFin",
-    "cssUrl": "https://raw.githubusercontent.com/Jellyfin-PG/Skin-Manager-Themes/refs/heads/main/temp/elegantfin.min.css",
+    "cssUrl": "https://cdn.jsdelivr.net/gh/Jellyfin-PG/Skin-Manager-Themes@main/temp/elegantfin.min.css",
     "vars": [
       {
         "key": "ACCENT_COLOR",
@@ -194,7 +194,7 @@
     "tags": ["dark", "dracula", "purple", "developer"],
     "previewUrl": "https://i.imgur.com/KqxS1J7.png",
     "sourceUrl": "https://github.com/derektata/jellyfin-themes",
-    "cssUrl": "https://derektata.github.io/jellyfin-themes/dracula.css"
+    "cssUrl": "https://cdn.jsdelivr.net/gh/derektata/jellyfin-themes@main/dracula.css"
   },
   {
     "name": "One Dark",
@@ -205,7 +205,7 @@
     "tags": ["dark", "one-dark", "blue", "developer"],
     "previewUrl": "https://i.imgur.com/f69BXHw.png",
     "sourceUrl": "https://github.com/derektata/jellyfin-themes",
-    "cssUrl": "https://derektata.github.io/jellyfin-themes/one-dark.css"
+    "cssUrl": "https://cdn.jsdelivr.net/gh/derektata/jellyfin-themes@main/one-dark.css"
   },
   {
     "name": "Gruvbox Dark",
@@ -216,7 +216,7 @@
     "tags": ["dark", "gruvbox", "warm", "developer"],
     "previewUrl": "https://i.imgur.com/r1bj00n.png",
     "sourceUrl": "https://github.com/derektata/jellyfin-themes",
-    "cssUrl": "https://derektata.github.io/jellyfin-themes/gruvbox-dark.css"
+    "cssUrl": "https://cdn.jsdelivr.net/gh/derektata/jellyfin-themes@main/gruvbox-dark.css"
   },
   {
     "name": "Tokyo Night",
@@ -227,6 +227,6 @@
     "tags": ["dark", "tokyo-night", "blue", "neon"],
     "previewUrl": "https://i.imgur.com/e1urdcy.png",
     "sourceUrl": "https://github.com/derektata/jellyfin-themes",
-    "cssUrl": "https://derektata.github.io/jellyfin-themes/tokyo.css"
+    "cssUrl": "https://cdn.jsdelivr.net/gh/derektata/jellyfin-themes@main/tokyo.css"
   }
 ]
