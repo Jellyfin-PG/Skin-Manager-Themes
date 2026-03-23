@@ -231,31 +231,7 @@
     "tags": ["minimal", "clean", "light"],
     "previewUrl": "https://i.imgur.com/OLLSX1K.jpeg",
     "sourceUrl": "https://github.com/tedhinklater/finimalism",
-    "cssUrl": "https://raw.githubusercontent.com/Jellyfin-PG/Skin-Manager-Themes/refs/heads/main/temp/finimalism11.min.css",
-    "vars": [
-      {
-        "key": "TEXT_COLOR",
-        "name": "TEXT Color",
-        "description": "Primary text color.",
-        "type": "color",
-        "default": "#ffffff",
-        "allowGradient": false
-      },
-      {
-        "key": "THEME_ROUNDING",
-        "name": "Rounding for elements",
-        "description": "How Round an element is.",
-        "type": "text",
-        "default": "0.8em"
-      },
-      {
-        "key": "THEME_BLUR",
-        "name": "Blur for the theme",
-        "description": "How blurry it is.",
-        "type": "text",
-        "default": "blur(0px)"
-      }
-    ]
+    "cssUrl": "https://raw.githubusercontent.com/Jellyfin-PG/Skin-Manager-Themes/refs/heads/main/temp/finimalism11.min.css"
   },
   {
     "name": "Finimalism 12",
