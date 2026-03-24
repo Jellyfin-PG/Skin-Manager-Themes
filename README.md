@@ -52,7 +52,7 @@ Use any consistent versioning scheme, semantic (`1.2.0`), date-based (`25.12.31`
 
 Themes can expose configurable values that users can change from the Skin Manager settings page without editing any CSS. When a theme has variables, a configure button appears on the selected theme card in the store.
 
-Variables are declared in `skins.json` using a `vars` array. The theme CSS references them using standard CSS custom properties (`var(--key-name)`). Skin Manager injects the user's saved values as a `:root` block directly into the page HTML before the stylesheet loads, so they apply instantly with no flash of unstyled content.
+Variables are declared in `skins.json` using a `vars` array. The theme CSS references them using standard CSS custom properties (`var(--keyName)`). Skin Manager injects the user's saved values as a `:root` block directly into the page HTML before the stylesheet loads, so they apply instantly with no flash of unstyled content.
 
 ### Declaring variables in `skins.json`
 
@@ -65,21 +65,21 @@ Add a `vars` array to the theme entry. Each var needs a `key`, `name`, `descript
   "cssUrl": "https://cdn.jsdelivr.net/gh/author/theme@main/theme.css",
   "vars": [
     {
-      "key": "ACCENT_COLOR",
+      "key": "accentColor",
       "name": "Accent Color",
       "description": "Primary highlight color used throughout the theme.",
       "type": "color",
       "default": "#00a4dc"
     },
     {
-      "key": "FONT_SIZE",
+      "key": "fontSize",
       "name": "Base Font Size",
       "description": "Base font size. Use CSS units e.g. 14px, 1em.",
       "type": "text",
       "default": "14px"
     },
     {
-      "key": "ENABLE_BACKDROPS",
+      "key": "enableBackdrops",
       "name": "Show Backdrops",
       "description": "Toggle backdrop images on the home screen.",
       "type": "boolean",
@@ -91,7 +91,7 @@ Add a `vars` array to the theme entry. Each var needs a `key`, `name`, `descript
 
 **Available var types:** `text` `color` `number` `boolean`
 
-The `key` uses `UPPER_SNAKE_CASE`. Skin Manager converts it to `--lower-kebab-case` automatically — `ACCENT_COLOR` becomes `--accent-color`, `FONT_SIZE` becomes `--font-size`, and so on.
+The `key` uses `camelCase`. Skin Manager converts it to `--camelCase` automatically — `accentColor` becomes `--accentColor`, `fontSize` becomes `--fontSize`, and so on.
 
 ### Using variables in your CSS
 
@@ -99,11 +99,11 @@ Reference the custom properties using `var()`. Always include a fallback value �
 
 ```css
 .headerTop {
-  background-color: var(--accent-color, #00a4dc);
+  background-color: var(--accentColor, #00a4dc);
 }
 
 body {
-  font-size: var(--font-size, 14px);
+  font-size: var(--fontSize, 14px);
 }
 ```
 
@@ -114,8 +114,8 @@ When a user saves their variable values, Skin Manager injects a `<style>` tag di
 ```html
 <style id="skinmanager-vars">
 :root {
-    --accent-color: #e5534b;
-    --font-size: 16px;
+    --accentColor: #e5534b;
+    --fontSize: 16px;
 }
 </style>
 ```
@@ -136,13 +136,13 @@ Add a special comment to your theme CSS file for each addon:
 /* @sm-import-if VAR_KEY https://cdn.jsdelivr.net/gh/author/theme@main/addons/media-bar.css */
 ```
 
-When Skin Manager loads your theme, it reads these comments. If `VAR_KEY` is `true` in the user's saved vars, the addon URL is fetched and appended to the theme CSS. If it is `false` or unset, the comment is stripped and nothing is loaded.
+When Skin Manager loads your theme, it reads these comments. If `varKey` is `true` in the user's saved vars, the addon URL is fetched and appended to the theme CSS. If it is `false` or unset, the comment is stripped and nothing is loaded.
 
 Declare the corresponding var as a `boolean` type in `skins.json`:
 
 ```json
 {
-  "key": "MEDIA_BAR_SUPPORT",
+  "key": "mediaSupportBar",
   "name": "Media Bar Plugin Support",
   "description": "Enable additional styles for the Media Bar plugin.",
   "type": "boolean",
@@ -161,21 +161,21 @@ Declare the corresponding var as a `boolean` type in `skins.json`:
   "cssUrl": "https://cdn.jsdelivr.net/gh/author/theme@main/theme.css",
   "vars": [
     {
-      "key": "ACCENT_COLOR",
+      "key": "accentColor",
       "name": "Accent Color",
       "description": "Primary highlight color.",
       "type": "color",
       "default": "#00a4dc"
     },
     {
-      "key": "MEDIA_BAR_SUPPORT",
+      "key": "mediaBarSupport",
       "name": "Media Bar Plugin Support",
       "description": "Enable additional styles for the Media Bar plugin.",
       "type": "boolean",
       "default": "false"
     },
     {
-      "key": "CUSTOM_COVERS",
+      "key": "customCovers",
       "name": "Custom Media Covers",
       "description": "Enable alternate card cover styles.",
       "type": "boolean",
@@ -188,11 +188,11 @@ Declare the corresponding var as a `boolean` type in `skins.json`:
 `theme.css`:
 
 ```css
-/* @sm-import-if MEDIA_BAR_SUPPORT https://cdn.jsdelivr.net/gh/author/theme@main/addons/media-bar.css */
-/* @sm-import-if CUSTOM_COVERS https://cdn.jsdelivr.net/gh/author/theme@main/addons/custom-covers.css */
+/* @sm-import-if mediaBarSupport https://cdn.jsdelivr.net/gh/author/theme@main/addons/media-bar.css */
+/* @sm-import-if customCovers https://cdn.jsdelivr.net/gh/author/theme@main/addons/custom-covers.css */
 
 .headerTop {
-  background-color: var(--accent-color, #00a4dc);
+  background-color: var(--accentColor, #00a4dc);
 }
 ```
 
