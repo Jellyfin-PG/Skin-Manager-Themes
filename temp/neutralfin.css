@@ -64,14 +64,14 @@
     /* Backgrounds and gradients */
     --backgroundGradient: var(--background-gradient, linear-gradient(
         0deg,
-        var(--darkerGradientPoint) 35%,
-        var(--lighterGradientPoint)
+        #131313 35%,
+        #1e1e1e
     ));
     --cardBackgroundGradient: var(--card-gradient, linear-gradient(
         0deg,
-        var(--darkerGradientPoint),
+        #131313,
         25%,
-        var(--lighterGradientPoint)
+        #1e1e1e
     ));
     --hoverGradientA: linear-gradient(
         130deg,
