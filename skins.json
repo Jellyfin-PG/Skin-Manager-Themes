@@ -11,6 +11,26 @@
     "cssUrl": ""
   },
   {
+    "name": "Abyss",
+    "author": "Aumgupta",
+    "description": "A clean and minimal theme for Jellyfin with frosted glass surfaces, refined typography, smooth animations and a minimal design language that re-skins JellyFin almost exhaustively.",
+    "version": "latest",
+    "jellyfin": "10.11+",
+    "tags": ["modern", "backdrops"],
+    "previewUrl": "https://cdn.jsdelivr.net/gh/AumGupta/abyss-jellyfin@main/docs/assets/images/1.png",
+    "sourceUrl": "https://github.com/AumGupta/abyss-jellyfin/tree/main",
+    "cssUrl": "https://raw.githubusercontent.com/Jellyfin-PG/Skin-Manager-Themes/refs/heads/main/temp/abyss.css",
+    "vars": [
+      {
+        "key": "ABYSS_RADIUS",
+        "name": "Abyss Radius",
+        "description": "Abyss radius.",
+        "type": "text",
+        "default": "12px"
+      }
+    ]
+  },
+  {
     "name": "BetterUI",
     "author": "TromoSM",
     "description": "A modern UI enhancement theme for Jellyfin focused on cleaner layout, smoother animations, and ios like design.",
