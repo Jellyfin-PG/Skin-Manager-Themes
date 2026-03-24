@@ -241,7 +241,24 @@
     "tags": ["dark", "modern", "mobile-friendly"],
     "previewUrl": "https://raw.githubusercontent.com/KartoffelChipss/NeutralFin/main/assets/neutralfin-movie.webp",
     "sourceUrl": "https://github.com/KartoffelChipss/NeutralFin",
-    "cssUrl": "https://cdn.jsdelivr.net/gh/KBH-Reeper/GlassFin@latest/Theme/GlassFin-Theme-latest-stable.css"
+    "cssUrl": "https://raw.githubusercontent.com/Jellyfin-PG/Skin-Manager-Themes/refs/heads/main/temp/neutralfin.min.css",
+    "vars": [
+      {
+        "key": "BORDER_COLOR",
+        "name": "Border Color",
+        "description": "Color of the border of elements.",
+        "type": "color",
+        "default": "rgb(71, 71, 71)",
+        "allowGradient": false
+      },
+      {
+        "key": "BACKGROUND_GRADIENT",
+        "name": "Background Gradient",
+        "description": "Gradient used for the background of the theme.",
+        "type": "color",
+        "default": "linear-gradient(0deg, var(--darkerGradientPoint) 35%, var(--lighterGradientPoint))"
+      }
+    ]
   },
   {
     "name": "Ultrachromic (Monochromic Preset)",
