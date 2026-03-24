@@ -11,7 +11,7 @@
     "cssUrl": ""
   },
   {
-    "name": "BetterUI TEST",
+    "name": "BetterUI",
     "author": "TromoSM",
     "description": "A modern UI enhancement theme for Jellyfin focused on cleaner layout, smoother animations, and ios like design.",
     "version": "latest",
@@ -233,17 +233,6 @@
     "previewUrl": "https://i.imgur.com/12GBS1L.png",
     "sourceUrl": "https://github.com/CTalvio/Ultrachromic",
     "cssUrl": "https://cdn.jsdelivr.net/gh/CTalvio/Ultrachromic/presets/monochromic_preset.css"
-  },
-    {
-    "name": "BetterUI",
-    "author": "TromoSM",
-    "description": "A modern UI enhancement theme for Jellyfin focused on cleaner layout, smoother animations, and ios like design.",
-    "version": "latest",
-    "jellyfin": "10.11+",
-    "tags": ["dark", "modern", "backdrops", "indicators"],
-    "previewUrl": "https://i.imgur.com/cYr5Uv2.png",
-    "sourceUrl": "https://github.com/tromoSM/better-jellyfin-ui",
-    "cssUrl": "https://cdn.jsdelivr.net/gh/tromoSM/better-jellyfin-ui@main/theme.css"
   },
   {
     "name": "Jellyfish",
