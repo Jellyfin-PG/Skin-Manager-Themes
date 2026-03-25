@@ -109,115 +109,137 @@
     "cssUrl": "https://raw.githubusercontent.com/Jellyfin-PG/Skin-Manager-Themes/refs/heads/main/temp/elegantfin.min.css",
     "vars": [
       {
-        "key": "ACCENT_COLOR",
-        "name": "Accent Color",
-        "description": "Primary accent color for backgrounds, buttons, and highlights.",
-        "type": "color",
-        "default": "#775bf4",
-        "allowGradient": false
+        "key": "elegantFinFooterText",
+        "name": "Footer Text",
+        "description": "Custom text displayed at the bottom of the dashboard.",
+        "type": "text",
+        "default": "\"ElegantFin v25.12.31\""
       },
       {
-        "key": "ACCENT_COLOR_SOLID",
-        "name": "Accent Color (solid)",
-        "description": "Solid version of the accent color used for text, borders, and contexts where gradients are not valid. Should match or complement the main Accent Color.",
+        "key": "darkerGradientPoint",
+        "name": "Background Base Color",
+        "description": "The darker/bottom color point of the main app background gradient.",
         "type": "color",
-        "default": "#775bf4",
-        "allowGradient": false
+        "default": "#111827"
       },
       {
-        "key": "ACCENT_COLOR_ALPHA",
-        "name": "Accent Color (with opacity)",
-        "description": "Accent color at ~90% opacity, used for selection highlights and overlays.",
+        "key": "lighterGradientPoint",
+        "name": "Background Top Color",
+        "description": "The lighter/top color point of the main app background gradient.",
         "type": "color",
-        "default": "rgba(119, 91, 244, 0.9)",
-        "allowGradient": false
+        "default": "#1d2635"
       },
       {
-        "key": "ACCENT_COLOR_SOLID_ALPHA",
-        "name": "Accent Color (solid, with opacity)",
-        "description": "Solid semi-transparent version used for color contexts. Should be rgba() matching the solid accent color.",
+        "key": "headerColor",
+        "name": "Header Background Color",
+        "description": "Background color for the top navigation bar.",
         "type": "color",
-        "default": "rgba(119, 91, 244, 0.9)",
-        "allowGradient": false
+        "default": "rgba(30, 40, 54, 0.8)"
       },
       {
-        "key": "BACKGROUND_GRADIENT",
-        "name": "Page Background Gradient",
-        "description": "Gradient used for main page backgrounds.",
+        "key": "drawerColor",
+        "name": "Sidebar/Drawer Color",
+        "description": "Background color for the slide-out navigation drawer.",
         "type": "color",
-        "default": "linear-gradient(0deg, #111827 35%, #1d2635)"
+        "default": "rgba(30, 40, 54, 0.9)"
       },
       {
-        "key": "CARD_BACKGROUND_GRADIENT",
-        "name": "Card Background Gradient",
-        "description": "Gradient used for card and panel backgrounds throughout the theme.",
+        "key": "uiAccentColor",
+        "name": "UI Accent Color",
+        "description": "Primary accent color for progress bars, focused elements, and checkboxes.",
         "type": "color",
-        "default": "linear-gradient(0deg, #1d2635, 25%, #111827)"
+        "default": "rgb(117, 111, 226)"
       },
       {
-        "key": "DARKER_BORDER_COLOR",
-        "name": "Border Color",
-        "description": "Color used for card borders and dividers throughout the theme.",
+        "key": "activeColor",
+        "name": "Active Item Color",
+        "description": "Color for active selected items and active menu options.",
         "type": "color",
-        "default": "hsl(214, 13%, 22%)",
-        "allowGradient": false
+        "default": "rgb(119, 91, 244)"
       },
       {
-        "key": "APP_BAR_HEIGHT",
-        "name": "App Bar Style",
-        "description": "5em = faded transparent bar (default). 4.6em = solid bar with a visible border.",
+        "key": "textColor",
+        "name": "Primary Text Color",
+        "description": "Main text color for the interface.",
+        "type": "color",
+        "default": "rgb(209, 213, 219)"
+      },
+      {
+        "key": "dimTextColor",
+        "name": "Secondary Text Color",
+        "description": "Text color for secondary information like plot, year, and duration.",
+        "type": "color",
+        "default": "rgb(156, 163, 175)"
+      },
+      {
+        "key": "loginPageBgUrl",
+        "name": "Login Background URL",
+        "description": "Direct URL to an image used for the login screen background.",
+        "type": "text",
+        "default": "url(\"\")"
+      },
+      {
+        "key": "loginPageText",
+        "name": "Login Screen Title",
+        "description": "Text shown at the top of the login screen.",
+        "type": "text",
+        "default": "\"Sign in to continue\""
+      },
+      {
+        "key": "iconPack",
+        "name": "Icon Pack",
+        "description": "Set to 'Material Icons Round' for new icons, or 'Material Icons' for classic.",
+        "type": "text",
+        "default": "\"Material Icons Round\", Material Icons"
+      },
+      {
+        "key": "clearLogoVisibility",
+        "name": "Clear Logo Visibility",
+        "description": "Set to 'block' to show movie/TV clear logos, or 'none' to hide them.",
+        "type": "text",
+        "default": "block"
+      },
+      {
+        "key": "libraryLabelVisibility",
+        "name": "Library Label Visibility",
+        "description": "Set to 'block' to show text labels on media library cards, or 'none' to hide them.",
+        "type": "text",
+        "default": "none"
+      },
+      {
+        "key": "extraCardButtonsVisibility",
+        "name": "Hover Card Buttons",
+        "description": "Set to 'block' to show watched/favorite buttons on hover, 'none' to hide.",
+        "type": "text",
+        "default": "none"
+      },
+      {
+        "key": "itemTitleVisibility",
+        "name": "Item Title Visibility",
+        "description": "Set to 'block' to always show text title, 'none' to hide when logo exists.",
+        "type": "text",
+        "default": "none"
+      },
+      {
+        "key": "appBarHeight",
+        "name": "App Bar Height",
+        "description": "Use 5em for fading bar (seamless) or 4.6em for solid bar.",
         "type": "text",
         "default": "5em"
       },
       {
-        "key": "BACKDROP_TRIM",
-        "name": "Backdrop Trim",
-        "description": "How much to crop from the top of backdrop images. Between 0% and 20%.",
-        "type": "text",
-        "default": "10%"
-      },
-      {
-        "key": "CARD_HOVER_EFFECT",
-        "name": "Card Hover Shimmer",
-        "description": "Enable the shimmer animation when hovering over cards.",
+        "key": "mediaBarSupport",
+        "name": "Media Bar Plugin Support",
+        "description": "Enable additional styles for the Media Bar plugin.",
         "type": "boolean",
-        "default": "true",
-        "trueValue": "",
-        "falseValue": "none"
+        "default": "false"
       },
       {
-        "key": "CLEAR_LOGO_VISIBILITY",
-        "name": "Clear Logo",
-        "description": "Show the movie or show clear logo on detail pages.",
+        "key": "customMediaCovers",
+        "name": "Custom Media Covers",
+        "description": "Enable alternate custom media cover styles.",
         "type": "boolean",
-        "default": "true",
-        "trueValue": "block",
-        "falseValue": "none"
-      },
-      {
-        "key": "LIBRARY_LABEL_VISIBILITY",
-        "name": "Library Labels",
-        "description": "Show text labels on media library tiles on the home screen.",
-        "type": "boolean",
-        "default": "false",
-        "trueValue": "block",
-        "falseValue": "none"
-      },
-      {
-        "key": "ITEM_TITLE_VISIBILITY",
-        "name": "Item Title",
-        "description": "Show the media title when a clear logo is available.",
-        "type": "boolean",
-        "default": "false",
-        "trueValue": "block",
-        "falseValue": "none"
-      },
-      {
-        "key": "OVERLAY_PLAY_POSITION",
-        "name": "Play Button Position",
-        "description": "Position of the overlay play button on cards. 2.8em = bottom-left corner (default), 50% = center.",
-        "type": "text",
-        "default": "2.8em"
+        "default": "false"
       }
     ]
   },
