@@ -39,7 +39,7 @@
     "tags": ["dark", "modern", "backdrops", "indicators"],
     "previewUrl": "https://i.imgur.com/cYr5Uv2.png",
     "sourceUrl": "https://github.com/tromoSM/better-jellyfin-ui",
-    "cssUrl": "https://raw.githubusercontent.com/Jellyfin-PG/Skin-Manager-Themes/refs/heads/main/temp/betterui.min.css",
+    "cssUrl": "https://cdn.jsdelivr.net/gh/tromoSM/better-jellyfin-ui@main/theme.css",
     "vars": [
       {
         "key": "BG_GLOW_COLOR",
