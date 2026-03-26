@@ -39,63 +39,7 @@
     "tags": ["dark", "modern", "backdrops", "indicators"],
     "previewUrl": "https://i.imgur.com/cYr5Uv2.png",
     "sourceUrl": "https://github.com/tromoSM/better-jellyfin-ui",
-    "cssUrl": "https://cdn.jsdelivr.net/gh/tromoSM/better-jellyfin-ui@main/theme.css",
-    "vars": [
-      {
-        "key": "BG_GLOW_COLOR",
-        "name": "BG Glow Color",
-        "description": "Top-of-page gradient glow color.",
-        "type": "color",
-        "default": "#240000",
-        "allowGradient": false
-      },
-      {
-        "key": "CARD_RADIUS",
-        "name": "Card Radius",
-        "description": "Card corner radius.",
-        "type": "text",
-        "default": "15px"
-      },
-      {
-        "key": "BTN_RADIUS",
-        "name": "Button Radius",
-        "description": "Button corner radius.",
-        "type": "text",
-        "default": "50px"
-      },
-      {
-        "key": "INPUT_RADIUS",
-        "name": "Input Radius",
-        "description": "Input corner radius.",
-        "type": "text",
-        "default": "10px"
-      },
-      {
-        "key": "TRANSITION_SPEED",
-        "name": "Transition Speed",
-        "description": "Base transition duration.",
-        "type": "text",
-        "default": "0.2s"
-      },
-      {
-        "key": "ENABLE_CARD_ANIMATIONS",
-        "name": "Enable Card Animations",
-        "description": "Animate cards fading in on load.",
-        "type": "boolean",
-        "default": "true",
-        "trueValue": "1",
-        "falseValue": "0"
-      },
-      {
-        "key": "ENABLE_FLOATING_HEADER",
-        "name": "Enable Floating Header",
-        "description": "Make the header a floating pill.",
-        "type": "boolean",
-        "default": "false",
-        "trueValue": "1",
-        "falseValue": "0"
-      }
-    ]
+    "cssUrl": "https://cdn.jsdelivr.net/gh/tromoSM/better-jellyfin-ui@main/theme.css"
   },
   {
     "name": "ElegantFin",
