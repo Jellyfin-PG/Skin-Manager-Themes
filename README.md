@@ -32,11 +32,19 @@ Each entry in `skins.json` uses the following structure:
   "tags": ["dark", "minimal"],
   "previewUrl": "https://example.com/preview.png",
   "sourceUrl": "https://github.com/author/theme",
-  "cssUrl": "https://cdn.jsdelivr.net/gh/author/theme@main/theme.css"
+  "cssUrl": "https://cdn.jsdelivr.net/gh/author/theme@main/theme.css",
+  "preconnect": [
+    "https://fonts.googleapis.com",
+    "https://i.imgur.com"
+  ]
 }
 ```
 
 **Available tags:** `dark` `light` `minimal` `modern` `colorful` `backdrops` `mobile-friendly` `tv` `icons` `animations` `developer`
+
+### Preconnect field
+
+An optional array of origin URLs that your theme frequently contacts (like Google Fonts or image hosts). Skin Manager will dynamically inject `<link rel="preconnect">` tags for these domains to drastically accelerate the browser's DNS and TLS Handshake waterfall.
 
 ### Version field
 
@@ -111,26 +119,11 @@ If you want to completely bypass CSS cascading and `var()` lookups, you can use 
 .headerTop { background-color: {{accent-color}}; }
 ```
 
-### How injection works
-
-When a user saves their variable values, Skin Manager dynamically injects a `<style>` tag directly into `index.html` before the page is served. It uses an elevated specificity selector and `!important` flags to guarantee your variables take priority over the base stylesheet:
-
-```html
-<style id="skinmanager-vars">
-html:root, body {
-    --accent-color: #e5534b !important;
-    --font-size: 16px !important;
-}
-</style>
-```
-
-This tag is applied immediately as the browser parses the HTML, before any JavaScript runs or any network request is made for the stylesheet.
-
 ## Addon CSS Sheets
 
 Themes can include optional addon stylesheets that users enable or disable using boolean variables. This lets you ship modular features — media player reskins, third-party plugin support, alternate layouts, without loading CSS that the user does not want.
 
-### How it works
+### Declaring Addons
 
 Add a special comment to your theme CSS file for each addon:
 
@@ -152,9 +145,9 @@ Declare the corresponding var as a `boolean` type in `skins.json`:
 }
 ```
 
-### Full example
+### Full Example
 
-`skins.json` entry:
+**`skins.json` entry:**
 
 ```json
 {
@@ -175,23 +168,18 @@ Declare the corresponding var as a `boolean` type in `skins.json`:
       "description": "Enable additional styles for the Media Bar plugin.",
       "type": "boolean",
       "default": "false"
-    },
-    {
-      "key": "customCovers",
-      "name": "Custom Media Covers",
-      "description": "Enable alternate card cover styles.",
-      "type": "boolean",
-      "default": "false"
     }
+  ],
+  "preconnect": [
+    "https://fonts.googleapis.com"
   ]
 }
 ```
 
-`theme.css`:
+**`theme.css`:**
 
 ```css
 /* @sm-import-if mediaBarSupport https://cdn.jsdelivr.net/gh/author/theme@main/addons/media-bar.css */
-/* @sm-import-if customCovers https://cdn.jsdelivr.net/gh/author/theme@main/addons/custom-covers.css */
 
 .headerTop {
   background-color: var(--accent-color, #00a4dc);
@@ -200,18 +188,28 @@ Declare the corresponding var as a `boolean` type in `skins.json`:
 
 Addon sheets can be hosted anywhere, jsDelivr is recommended for the same reasons as the main CSS.
 
-### Backward compatibility
+## Architecture & Injection
 
-`@sm-import-if` comments are valid CSS comments and are silently ignored by any browser or plugin that does not understand them. Older versions of Skin Manager will simply load the theme without the addons.
+When a theme is enabled, Skin Manager utilizes an **Offline Disk Proxy**. 
+
+The plugin downloads your `cssUrl` (and any enabled addons) using a robust backend connection and caches the raw stylesheets to the Jellyfin server's local storage. 
+
+Skin Manager then processes the stylesheet either server-side (for Global Themes) or client-side (for User Themes), automatically substituting your variables natively into the CSS string. It finally injects the fully compiled, highly-optimized payload into the Jellyfin web client directly from a local API endpoint on the server (`/api/SkinManager/Resource`).
+
+This local proxy injection guarantees:
+1. Instant load times and complete immunity to external CDN outages.
+2. Freedom from browser cross-origin policy blockages.
+3. Guaranteed specificity precedence for your custom variables.
 
 ## Backward Compatibility
 
-All features are additive and optional:
+All features are additive, optional, and gracefully degrade on older plugin versions:
 
-* Themes without `vars` work exactly as before, no configure button appears
-* Themes without `@sm-import-if` comments are unaffected by the addon system
-* The `version` field is new but harmless to omit, auto-update is simply skipped for themes without it
-* CSS `var(--key, fallback)` syntax means themes with variables still display correctly on older plugin versions using the fallback value
+* **Variables**: Themes without `vars` work exactly as before; no configure button appears.
+* **Fallbacks**: CSS `var(--key, fallback)` syntax ensures themes correctly render default aesthetic on older plugins.
+* **Addons**: `@sm-import-if` comments are valid CSS comments and are silently ignored by older plugin versions.
+* **Networking**: The `preconnect` array is gracefully ignored by older plugin versions.
+* **Versioning**: The `version` field is harmless to omit; auto-update checks are simply skipped.
 
 ## License
 
