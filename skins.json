@@ -50,7 +50,7 @@
     "tags": ["dark", "modern", "mobile-friendly", "tv"],
     "previewUrl": "https://i.imgur.com/drRNLnf.jpeg",
     "sourceUrl": "https://github.com/lscambo13/ElegantFin",
-    "cssUrl": "https://cdn.jsdelivr.net/gh/Jellyfin-PG/Skin-Manager-Themes@main/temp/elegantfin.min.css",
+    "cssUrl": "https://raw.githubusercontent.com/Jellyfin-PG/Skin-Manager-Themes/refs/heads/main/temp/elegantfin.min.css",
     "preconnect": [
       "https://raw.githubusercontent.com",
       "https://i.imgur.com",
