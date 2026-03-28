@@ -42,6 +42,23 @@
     "cssUrl": "https://cdn.jsdelivr.net/gh/tromoSM/better-jellyfin-ui@main/theme.css"
   },
   {
+    "name": "ElegantFin CDN",
+    "author": "lscambo13",
+    "description": "A modern Jellyfin theme inspired by Jellyseerr. Brings fresh layouts, smooth animations, rounded corners, stylish borders, and hover effects. Works great on mobile, desktop, and TV with a single import.",
+    "version": "25.12.32",
+    "jellyfin": "10.10+",
+    "tags": ["dark", "modern", "mobile-friendly", "tv"],
+    "previewUrl": "https://i.imgur.com/drRNLnf.jpeg",
+    "sourceUrl": "https://github.com/lscambo13/ElegantFin",
+    "cssUrl": "https://cdn.jsdelivr.net/gh/Jellyfin-PG/Skin-Manager-Themes@main/temp/elegantfin.min.css",
+    "preconnect": [
+      "https://raw.githubusercontent.com",
+      "https://i.imgur.com",
+      "https://fonts.googleapis.com",
+      "https://fonts.gstatic.com"
+    ]
+  },
+  {
     "name": "ElegantFin",
     "author": "lscambo13",
     "description": "A modern Jellyfin theme inspired by Jellyseerr. Brings fresh layouts, smooth animations, rounded corners, stylish borders, and hover effects. Works great on mobile, desktop, and TV with a single import.",
